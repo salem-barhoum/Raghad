@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghad Jabbour | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #EAB6B6;
+            --nav-color: #827F7F;
+            --text-dark: #2D2D2D;
+        }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .nav-custom { background-color: var(--nav-color); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 2px solid transparent;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            border-color: var(--nav-color);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            display: inline-block;
+            border-bottom: 5px solid var(--nav-color);
+            padding-bottom: 8px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .video-container iframe {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .video-vertical iframe { aspect-ratio: 9/16; max-height: 550px; }
+        .video-horizontal iframe { aspect-ratio: 16/9; }
+        .btn-social {
+            transition: all 0.3s ease;
+            background: white;
+            border: 2px solid transparent;
+        }
+        .btn-social:hover {
+            background: var(--nav-color);
+            color: white;
+            border-color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 nav-custom text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-black tracking-widest">RAGHAD JABBOUR</h1>
+            <div class="space-x-8 hidden md:flex font-bold text-sm">
+                <a href="#about" class="hover:opacity-70">ABOUT</a>
+                <a href="#experience" class="hover:opacity-70">CV</a>
+                <a href="#works" class="hover:opacity-70">MY WORKS</a>
+                <a href="#contact" class="hover:opacity-70">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="about" class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <img src="profile.jpg" alt="Raghad Jabbour" class="w-48 h-48 rounded-full border-8 border-white shadow-2xl mb-8 object-cover" data-aos="zoom-in">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-800 mb-2 text-center" data-aos="fade-up">RAGHAD JABBOUR</h2>
+            [cite_start]<p class="text-xl font-bold text-slate-700 mb-12 uppercase tracking-widest" data-aos="fade-up" data-aos-delay="100">Media Producer & Journalist [cite: 5]</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 w-full">
+                <div class="glass-card p-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 italic">Contact Info</h3>
+                    <div class="space-y-4 text-lg font-medium">
+                        [cite_start]<p><i class="fas fa-phone mr-3"></i> +971 50 457 3341 [cite: 3]</p>
+                        [cite_start]<p><i class="fas fa-map-marker-alt mr-3"></i> Abu Dhabi, UAE [cite: 1]</p>
+                        [cite_start]<p><i class="fas fa-envelope mr-3"></i> raghad.jpoor@gmail.com [cite: 2]</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6 italic">Professional Summary</h3>
+                    <p class="text-slate-800 leading-relaxed">
+                        [cite_start]Media Producer and Journalist with 5+ years of experience in radio broadcasting and media production[cite: 7]. [cite_start]Known for crafting compelling narratives and driving impactful content that resonates with diverse demographics[cite: 7, 8].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-6 bg-white/10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="fade-right">Visual Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <img src="photo1.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="100">
+                <img src="photo2.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="200">
+                <img src="photo3.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="300">
+                <img src="photo4.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="400">
+                <img src="photo5.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="500">
+                <img src="photo6.jpg" class="rounded-2xl shadow-lg border-4 border-white" data-aos="fade-up" data-aos-delay="600">
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="fade-right">Professional Experience</h2>
+            
+            <div class="space-y-8 mb-20">
+                <div class="glass-card p-8" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        [cite_start]<h4 class="text-2xl font-bold">Journalist Reporter & Radio Writer [cite: 12]</h4>
+                        [cite_start]<span class="bg-slate-700 text-white px-4 py-1 rounded-full text-sm font-bold">2021 — 2025 [cite: 11]</span>
+                    </div>
+                    <p class="text-lg font-bold text-slate-700 mb-4">Radio Sawt Alshabab | [cite_start]General Authority for Radio and Television [cite: 12]</p>
+                    <ul class="list-disc ml-6 space-y-2 text-slate-800">
+                        [cite_start]<li>Develops compelling radio content and storytelling[cite: 13].</li>
+                        [cite_start]<li>Conducts in-depth interviews and research to boost program ratings[cite: 15].</li>
+                        [cite_start]<li>Coordinates with technical teams to enhance broadcast quality[cite: 19].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div data-aos="fade-right">
+                    <h2 class="section-header text-3xl">Education</h2>
+                    <div class="glass-card p-6 space-y-4">
+                        <div>
+                            [cite_start]<p class="font-black text-lg">BA of Media [cite: 36]</p>
+                            [cite_start]<p>Damascus Virtual University, Syria (2022-2024) [cite: 35, 36]</p>
+                        </div>
+                        <div>
+                            [cite_start]<p class="font-black text-lg">BA of Russian Literature [cite: 34]</p>
+                            [cite_start]<p>Damascus University, Syria (2019-2020) [cite: 33, 34]</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="section-header text-3xl">Professional Skills</h2>
+                    <div class="flex flex-wrap gap-3">
+                        [cite_start]<span class="bg-white px-4 py-2 rounded-lg font-bold shadow-sm">Storytelling [cite: 49]</span>
+                        [cite_start]<span class="bg-white px-4 py-2 rounded-lg font-bold shadow-sm">Content Creation [cite: 50]</span>
+                        [cite_start]<span class="bg-white px-4 py-2 rounded-lg font-bold shadow-sm">Interview Techniques [cite: 52]</span>
+                        [cite_start]<span class="bg-white px-4 py-2 rounded-lg font-bold shadow-sm">Public Speaking [cite: 58]</span>
+                        [cite_start]<span class="bg-white px-4 py-2 rounded-lg font-bold shadow-sm">Social Media Strategy [cite: 56]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="py-20 px-6 bg-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="fade-right">My Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/ameAjoC9l9Y" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Interview: Actor Houssam Al Shah</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Conducted and moderated a professional radio interview with actor Houssam Al Shah on “The Goat” at Al-Hamra Theater in Damascus, delivering culturally insightful and analytically structured coverage.</p>
+                    <a href="https://youtube.com/shorts/ameAjoC9l9Y" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube <i class="fab fa-youtube ml-2"></i></a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/v_5RohS_wWo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Interview: Director Zain Tayyar</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Conducted and moderated a professional radio interview with director Zain Tayyar of “The Goat” at Al-Hamra Theater in Damascus, exploring the directorial vision and artistic framework.</p>
+                    <a href="https://youtube.com/shorts/v_5RohS_wWo" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube <i class="fab fa-youtube ml-2"></i></a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-horizontal mb-6">
+                        <iframe src="https://www.youtube.com/embed/vd0w-U3XXSE" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Audio Recording: "The Goat"</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Managed and executed professional audio recording for all interviews related to “The Goat”, ensuring optimal sound quality and broadcast-ready material.</p>
+                    <a href="https://youtu.be/vd0w-U3XXSE" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View Full Video</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/AlHNAV07als" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Interview: Actor Majd Mghammas</h4>
+                    <p class="text-slate-800 flex-grow mb-4">A professional interview discussing his role in “Al-Bab” at Al-Qabbani Theater in Damascus, highlighting character depth and the artistic experience.</p>
+                    <a href="https://youtube.com/shorts/AlHNAV07als" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/5ehGjeuNez0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Journalistic Conversation: Raghad Salim</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Actress Raghad Salim discussing her experience in “Al-Bab”, focusing on her interpretation of the character and preparation process.</p>
+                    <a href="https://youtube.com/shorts/5ehGjeuNez0" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-horizontal mb-6">
+                        <iframe src="https://www.youtube.com/embed/3AA541Y1vOE" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Audio Archive: "Al-Bab"</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Delivered clear and precise audio recordings for all interviews related to “Al-Bab”, ensuring high sound quality for professional archiving.</p>
+                    <a href="https://youtu.be/3AA541Y1vOE" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View Full Video</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/63jYU66rf-k" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Art Exhibition: "Hattan"</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Media coverage of the dual art exhibition by visual artists Ali Naffanouf and Adnan Ayoub, highlighting the visual vision and artistic dialogue.</p>
+                    <a href="https://youtube.com/shorts/63jYU66rf-k" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/4PevSXWtwyY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Interview: Director Najdat Anzour</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Conducted during the premiere of “The Broken Cross”, discussing directorial vision, thematic messages, and cinematic aesthetics.</p>
+                    <a href="https://youtube.com/shorts/4PevSXWtwyY" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/DOvmdr0oWM8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Syrian Heritage Program</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Interview with Nazir Awad regarding children’s booklets introducing Syrian heritage and connecting younger generations with history.</p>
+                    <a href="https://youtube.com/shorts/DOvmdr0oWM8" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
+                    <div class="video-container video-vertical mb-6">
+                        <iframe src="https://www.youtube.com/embed/o_SDAON1dyg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Arab Reading Challenge</h4>
+                    <p class="text-slate-800 flex-grow mb-4">Interview with a winner of the Arab Reading Challenge, highlighting the impact of reading on personal development.</p>
+                    <a href="https://youtube.com/shorts/o_SDAON1dyg" target="_blank" class="nav-custom text-white text-center py-3 rounded-xl font-bold hover:bg-slate-900 transition">View on YouTube</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="zoom-in">Let's Connect</h2>
+            
+            <div class="flex flex-wrap justify-center gap-6 mt-10">
+                <a href="https://wa.me/971504573341" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-whatsapp text-4xl text-green-500"></i>
+                    <span class="font-bold">WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/raghad.jabour" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                    <span class="font-bold">Instagram</span>
+                </a>
+                <a href="mailto:raghad.jpoor@gmail.com" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-envelope text-4xl text-blue-600"></i>
+                    <span class="font-bold">Gmail</span>
+                </a>
+            </div>
+
+            <div class="mt-20" data-aos="flip-up">
+                <a href="CV.pdf" download class="nav-custom text-white px-12 py-5 rounded-full text-2xl font-black shadow-2xl hover:scale-110 transition-transform inline-block">
+                    DOWNLOAD FULL CV <i class="fas fa-file-download ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center font-bold text-slate-700">
+        <p>RAGHAD JABBOUR &copy; 2026 | ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    </script>
+</body>
+</html>
