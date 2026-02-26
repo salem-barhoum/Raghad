@@ -101,6 +101,14 @@
             align-items: center;
         }
         #lightbox img { max-width: 90%; max-height: 85%; border: 3px solid white; border-radius: 10px; }
+
+        /* Multicolored Name Styles */
+        .char-1 { color: #D4A1A1; } /* Rose Gold */
+        .char-2 { color: #F3E5F5; } /* Off White */
+        .char-3 { color: #E1BEE7; } /* Soft Lavender */
+        .char-4 { color: #FFCDD2; } /* Pale Pink */
+        .char-5 { color: #BDBDBD; } /* Silver */
+        .char-6 { color: #D4A1A1; }
     </style>
 </head>
 <body>
@@ -110,20 +118,22 @@
     </div>
 
     <nav class="fixed w-full z-50 nav-custom text-white shadow-2xl">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-black tracking-widest">RAGHAD JABBOUR</h1>
-            <div class="space-x-8 hidden md:flex font-bold text-sm">
-                <a href="#about" class="nav-link">ABOUT</a>
-                <a href="#experience" class="nav-link">CV</a>
-                <a href="#works" class="nav-link">PORTFOLIO</a>
-                <a href="#contact" class="nav-link">CONTACT</a>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-center md:justify-end items-center">
+            <div class="space-x-8 flex font-bold text-sm tracking-widest">
+                <a href="#about" class="nav-link hover:text-pink-300 transition">ABOUT</a>
+                <a href="#experience" class="nav-link hover:text-pink-300 transition">CV</a>
+                <a href="#works" class="nav-link hover:text-pink-300 transition">PORTFOLIO</a>
+                <a href="#contact" class="nav-link hover:text-pink-300 transition">CONTACT</a>
             </div>
         </div>
     </nav>
 
     <header id="about" class="pt-32 pb-10 px-6 text-center">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl md:text-7xl font-black text-white mb-2" data-aos="fade-down">RAGHAD JABBOUR</h2>
+            <h2 class="text-5xl md:text-7xl font-black mb-2 tracking-tighter" data-aos="fade-down">
+                <span class="char-1">R</span><span class="char-2">A</span><span class="char-3">G</span><span class="char-4">H</span><span class="char-5">A</span><span class="char-6">D</span>
+                <span class="char-2">J</span><span class="char-1">A</span><span class="char-3">B</span><span class="char-4">B</span><span class="char-5">O</span><span class="char-2">U</span><span class="char-1">R</span>
+            </h2>
             <div class="profile-img-container" data-aos="zoom-in" onclick="openLightbox('profile.jpg')">
                 <img src="profile.jpg" alt="Raghad Jabbour">
             </div>
