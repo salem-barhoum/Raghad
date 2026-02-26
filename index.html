@@ -20,10 +20,9 @@
             color: var(--text-light); 
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            margin: 0;
         }
         
-        /* Interactive Pointers only for clickable elements */
+        /* Interactive Pointers on clickable items only */
         a, button, .glass-card, .profile-img-container, .edu-card, img, .btn-social, .nav-link {
             cursor: pointer;
         }
@@ -41,18 +40,14 @@
             border-color: var(--accent-pink);
             transform: translateY(-8px);
             box-shadow: 0 25px 40px rgba(0,0,0,0.8);
-            background: rgba(255, 255, 255, 0.08);
         }
 
-        /* 3D Education Cards */
         .edu-card {
             transition: all 0.5s ease;
-            perspective: 1000px;
         }
         .edu-card:hover {
             transform: scale(1.03) rotateX(4deg) rotateY(-4deg);
             border-left: 8px solid var(--accent-pink);
-            background: rgba(212, 161, 161, 0.1);
         }
 
         .section-header {
@@ -67,22 +62,16 @@
         }
 
         .profile-img-container {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             border: 6px solid var(--nav-color);
             overflow: hidden;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.9);
             margin: 0 auto 2rem auto;
-            transition: all 0.3s ease;
         }
-        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .video-container iframe {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-        }
+        .video-container iframe { width: 100%; border-radius: 15px; }
         .video-vertical iframe { aspect-ratio: 9/16; max-height: 500px; }
         .video-horizontal iframe { aspect-ratio: 16/9; }
 
@@ -92,13 +81,9 @@
             border: 1px solid rgba(255,255,255,0.1);
             color: white;
         }
-        .btn-social:hover {
-            background: var(--accent-pink);
-            transform: translateY(-5px);
-            color: #1a1212;
-        }
+        .btn-social:hover { background: var(--accent-pink); color: #1a1212; }
 
-        /* Full Screen Photo Viewer */
+        /* Lightbox Viewer */
         #lightbox {
             display: none;
             position: fixed;
@@ -109,12 +94,18 @@
             justify-content: center;
             align-items: center;
         }
-        #lightbox img {
-            max-width: 85%;
-            max-height: 85%;
-            border: 4px solid var(--accent-pink);
-            border-radius: 12px;
+        #lightbox img { max-width: 90%; max-height: 85%; border: 3px solid white; border-radius: 10px; }
+
+        /* Stars Design for Languages */
+        .lang-star-card {
+            background: rgba(212, 161, 161, 0.05);
+            border: 1px solid rgba(212, 161, 161, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
         }
+        .star-active { color: #D4A1A1; }
+        .star-inactive { color: rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -127,46 +118,85 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-black tracking-widest">RAGHAD JABBOUR</h1>
             <div class="space-x-8 hidden md:flex font-bold text-sm">
-                <a href="#about" class="hover:text-pink-300 transition nav-link">ABOUT</a>
-                <a href="#experience" class="hover:text-pink-300 transition nav-link">CV</a>
-                <a href="#works" class="hover:text-pink-300 transition nav-link">MY WORKS</a>
-                <a href="#contact" class="hover:text-pink-300 transition nav-link">CONTACT</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#experience" class="nav-link">CV</a>
+                <a href="#works" class="nav-link">PORTFOLIO</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <header id="about" class="pt-32 pb-20 px-6">
+    <header id="about" class="pt-32 pb-10 px-6">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
             <div class="profile-img-container" data-aos="zoom-in" onclick="openLightbox('profile.jpg')">
                 <img src="profile.jpg" alt="Raghad Jabbour">
             </div>
             <h2 class="text-5xl md:text-6xl font-black text-white mb-2 text-center" data-aos="fade-up">RAGHAD JABBOUR</h2>
             <p class="text-xl font-bold text-pink-200 mb-8 uppercase tracking-widest text-center" data-aos="fade-up">Media Producer & Journalist</p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
-                <span class="bg-pink-900/30 border border-pink-500/30 px-4 py-1 rounded-full text-pink-200 text-sm">Arabic: Native</span>
-                <span class="bg-pink-900/30 border border-pink-500/30 px-4 py-1 rounded-full text-pink-200 text-sm">Russian: Professional</span>
-                <span class="bg-pink-900/30 border border-pink-500/30 px-4 py-1 rounded-full text-pink-200 text-sm">English: Professional</span>
-            </div>
+        </div>
+    </header>
 
-            <div class="grid md:grid-cols-2 gap-8 w-full">
-                <div class="glass-card p-8" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-6 italic text-pink-200">Contact Info</h3>
-                    <div class="space-y-4 text-lg">
-                        <p><i class="fas fa-phone mr-3 text-pink-300"></i> +971 50 457 3341</p>
-                        <p><i class="fas fa-map-marker-alt mr-3 text-pink-300"></i> Abu Dhabi, UAE</p>
-                        <p><i class="fas fa-envelope mr-3 text-pink-300"></i> raghad.jpoor@gmail.com</p>
-                    </div>
+    <section class="py-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="fade-right">Visual Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <img src="photo1.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up">
+                <img src="photo2.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <img src="photo3.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <img src="photo4.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="300">
+                <img src="photo5.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="400">
+                <img src="photo6.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow-lg aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="500">
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8" data-aos="fade-right">
+                <h3 class="text-2xl font-bold mb-6 italic text-pink-200">Contact Info</h3>
+                <div class="space-y-4 text-lg">
+                    <p><i class="fas fa-phone mr-3 text-pink-300"></i> +971 50 457 3341</p>
+                    <p><i class="fas fa-map-marker-alt mr-3 text-pink-300"></i> Abu Dhabi, UAE</p>
+                    <p><i class="fas fa-envelope mr-3 text-pink-300"></i> raghad.jpoor@gmail.com</p>
                 </div>
-                <div class="glass-card p-8" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-6 italic text-pink-200">Professional Summary</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Media Producer and Journalist with over 5 years of experience in radio broadcasting and media production. Specialized in crafting compelling narratives and driving impactful content that resonates with diverse demographics. Expert in storytelling, public speaking, and managing high-profile cultural interviews.
-                    </p>
+            </div>
+            <div class="glass-card p-8" data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-6 italic text-pink-200">Professional Summary</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Media Producer and Journalist with 5+ years of experience in radio broadcasting and media production. Specialized in crafting compelling narratives and driving impactful content that resonates with diverse demographics. Expert in storytelling, public speaking, and broadcast production.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header text-3xl" data-aos="fade-right">Languages Proficiency</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="lang-star-card" data-aos="zoom-in">
+                    <h4 class="text-xl font-bold mb-2">Arabic</h4>
+                    <div class="flex justify-center gap-1 mb-2">
+                        <i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i>
+                    </div>
+                    <span class="text-sm text-pink-200">Native Proficiency</span>
+                </div>
+                <div class="lang-star-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-xl font-bold mb-2">Russian</h4>
+                    <div class="flex justify-center gap-1 mb-2">
+                        <i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-inactive"></i>
+                    </div>
+                    <span class="text-sm text-pink-200">Professional Level</span>
+                </div>
+                <div class="lang-star-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-xl font-bold mb-2">English</h4>
+                    <div class="flex justify-center gap-1 mb-2">
+                        <i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-active"></i><i class="fas fa-star star-inactive"></i>
+                    </div>
+                    <span class="text-sm text-pink-200">Professional Level</span>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <section id="experience" class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
@@ -179,7 +209,7 @@
                         <span class="text-pink-400 font-bold">2021 — 2025</span>
                     </div>
                     <p class="text-lg font-bold text-gray-400 mb-4 italic">Radio Sawt Alshabab | General Authority for Radio and Television</p>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-300">
+                    <ul class="list-disc ml-10 space-y-2 text-gray-300">
                         <li>Develops compelling radio content, boosting listener interaction and community ties.</li>
                         <li>Conducts in-depth interviews and research, producing high-quality content that significantly boosts program ratings.</li>
                         <li>Coordinates with technical teams to enhance broadcast quality and listener satisfaction.</li>
@@ -194,7 +224,7 @@
                         <span class="text-pink-400 font-bold">2019 — 2021</span>
                     </div>
                     <p class="text-lg font-bold text-gray-400 mb-4 italic">Dream Land Kindergarten & Private Instruction</p>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-300">
+                    <ul class="list-disc ml-10 space-y-2 text-gray-300">
                         <li>Taught Russian pronunciation, grammar, and culture for over 30 students.</li>
                         <li>Facilitated engaging lessons fostering cultural competence and language proficiency.</li>
                         <li>Guided students in mastering complex grammar, leading to improved communication skills.</li>
@@ -207,9 +237,8 @@
                         <span class="text-pink-400 font-bold">2017 — 2019</span>
                     </div>
                     <p class="text-lg font-bold text-gray-400 mb-4 italic">Henkel</p>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-300">
+                    <ul class="list-disc ml-10 space-y-2 text-gray-300">
                         <li>Managed international exhibitions, enhancing brand presence and driving measurable sales growth.</li>
-                        <li>Coordinated marketing campaigns that attracted a diverse and international clientele.</li>
                         <li>Implemented targeted promotional strategies resulting in noticeable increases in customer engagement.</li>
                     </ul>
                 </div>
@@ -236,7 +265,6 @@
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Content Creation</span>
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Public Speaking</span>
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Broadcast Production</span>
-                        <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Social Media Strategy</span>
                     </div>
                 </div>
             </div>
@@ -252,7 +280,7 @@
                         <iframe src="https://www.youtube.com/embed/ameAjoC9l9Y" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Actor Houssam Al Shah</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A professional radio interview conducted at Al-Hamra Theater regarding the play “The Goat”. The discussion dives deep into artistic performance and theater dynamics in Damascus.</p>
+                    <p class="text-gray-400 flex-grow mb-4">A professional radio interview conducted at Al-Hamra Theater regarding the play “The Goat”. Deep dive into artistic performance.</p>
                     <a href="https://youtube.com/shorts/ameAjoC9l9Y" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
@@ -260,23 +288,23 @@
                         <iframe src="https://www.youtube.com/embed/v_5RohS_wWo" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Director Zain Tayyar</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Exploring the directorial vision behind “The Goat”. This segment focuses on the creative challenges and the implementation of theatrical narratives on the Syrian stage.</p>
+                    <p class="text-gray-400 flex-grow mb-4">Exploring the directorial vision behind “The Goat” and creative challenges on the Syrian stage.</p>
                     <a href="https://youtube.com/shorts/v_5RohS_wWo" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
                     <div class="video-container video-horizontal mb-6">
                         <iframe src="https://www.youtube.com/embed/vd0w-U3XXSE" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-pink-200">Audio Production Archive: "The Goat"</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A comprehensive audio archive and technical recording session for the production of “The Goat”, ensuring high-fidelity sound for broadcast and digital media.</p>
-                    <a href="https://youtu.be/vd0w-U3XXSE" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch Full Video</a>
+                    <h4 class="text-xl font-bold mb-3 text-pink-200">Audio Archive: "The Goat"</h4>
+                    <p class="text-gray-400 flex-grow mb-4">Comprehensive audio archive and technical recording session for high-fidelity sound for broadcast.</p>
+                    <a href="https://youtu.be/vd0w-U3XXSE" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Full Video</a>
                 </div>
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
                     <div class="video-container video-vertical mb-6">
                         <iframe src="https://www.youtube.com/embed/AlHNAV07als" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Actor Majd Mghammas</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Coverage of the play “Al-Bab” at Al-Qabbani Theater. This interview explores the actor's preparation and the socio-cultural themes presented in the performance.</p>
+                    <p class="text-gray-400 flex-grow mb-4">Coverage of “Al-Bab” at Al-Qabbani Theater, exploring actor preparation and socio-cultural themes.</p>
                     <a href="https://youtube.com/shorts/AlHNAV07als" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
@@ -284,7 +312,7 @@
                         <iframe src="https://www.youtube.com/embed/5ehGjeuNez0" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Profile: Actress Raghad Salim</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A journalistic conversation with actress Raghad Salim regarding her role in “Al-Bab”, focusing on the artistic evolution of Syrian theater actresses.</p>
+                    <p class="text-gray-400 flex-grow mb-4">Journalistic conversation regarding her role in “Al-Bab” and artistic evolution in Syrian theater.</p>
                     <a href="https://youtube.com/shorts/5ehGjeuNez0" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
@@ -292,20 +320,9 @@
                         <iframe src="https://www.youtube.com/embed/3AA541Y1vOE" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Audio Archive: "Al-Bab"</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Technical audio execution for the “Al-Bab” theater interviews, highlighting precision in field recording and journalistic broadcast standards.</p>
-                    <a href="https://youtu.be/3AA541Y1vOE" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Watch Full Video</a>
+                    <p class="text-gray-400 flex-grow mb-4">Technical audio execution for the “Al-Bab” theater interviews and broadcast standards.</p>
+                    <a href="https://youtu.be/3AA541Y1vOE" target="_blank" class="btn-social block text-center py-3 rounded-xl font-bold">Full Video</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-header text-3xl" data-aos="fade-right">Visual Highlights</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <img src="photo1.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up">
-                <img src="photo2.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="100">
-                <img src="photo3.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
             </div>
         </div>
     </section>
@@ -314,17 +331,17 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="section-header text-3xl" data-aos="zoom-in">Let's Connect</h2>
             <div class="flex flex-wrap justify-center gap-6 mt-10">
-                <a href="https://wa.me/971504573341" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2">
+                <a href="https://wa.me/971504573341" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg">
                     <i class="fab fa-whatsapp text-4xl text-green-400"></i>
                     <span class="font-bold">WhatsApp</span>
                 </a>
-                <a href="https://www.instagram.com/raghad.jabour" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2">
+                <a href="https://www.instagram.com/raghad.jabour" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg">
                     <i class="fab fa-instagram text-4xl text-pink-400"></i>
                     <span class="font-bold">Instagram</span>
                 </a>
             </div>
             <div class="mt-20" data-aos="flip-up">
-                <a href="CV.pdf" download class="nav-custom text-white px-12 py-5 rounded-full text-2xl font-black border-2 border-pink-200 hover:scale-105 transition shadow-2xl">
+                <a href="CV.pdf" download class="nav-custom text-white px-12 py-5 rounded-full text-2xl font-black border-2 border-pink-200 hover:scale-110 transition shadow-2xl">
                     DOWNLOAD FULL CV <i class="fas fa-file-download ml-3"></i>
                 </a>
             </div>
