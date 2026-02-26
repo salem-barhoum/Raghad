@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #1a1212; 
-            --nav-color: #2d2b2b;
+            /* Rich Dark Black-Rose Theme */
+            --bg-color: #0f0a0a; 
+            --nav-color: #1a1515;
             --text-light: #f3f4f6;
             --accent-pink: #D4A1A1;
         }
@@ -20,18 +21,21 @@
             color: var(--text-light); 
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
         
-        /* Applied cursor pointer to all interactive elements */
-        a, button, .glass-card, .profile-img-container, .edu-card, img, .btn-social {
+        /* Interactive Pointers only where needed */
+        a, button, .glass-card, .profile-img-container, .edu-card, img, .btn-social, .nav-link {
             cursor: pointer;
         }
 
-        .nav-custom { background-color: var(--nav-color); }
+        .nav-custom { background-color: var(--nav-color); border-bottom: 1px solid rgba(255,255,255,0.05); }
         
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -39,27 +43,29 @@
         .glass-card:hover {
             border-color: var(--accent-pink);
             transform: translateY(-8px);
-            box-shadow: 0 25px 40px rgba(0,0,0,0.6);
-            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.8);
+            background: rgba(255, 255, 255, 0.08);
         }
 
+        /* 3D Education Card Moves */
         .edu-card {
             transition: all 0.5s ease;
+            perspective: 1000px;
         }
         .edu-card:hover {
-            transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+            transform: scale(1.03) rotateX(4deg) rotateY(-4deg);
             border-left: 8px solid var(--accent-pink);
-            background: rgba(212, 161, 161, 0.15);
+            background: rgba(212, 161, 161, 0.1);
         }
 
         .section-header {
             display: inline-block;
-            border-bottom: 5px solid var(--accent-pink);
+            border-bottom: 4px solid var(--accent-pink);
             padding-bottom: 8px;
             margin-bottom: 40px;
             text-transform: uppercase;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: var(--accent-pink);
         }
 
@@ -67,64 +73,61 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            border: 8px solid var(--nav-color);
+            border: 6px solid var(--nav-color);
             overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.9);
             margin: 0 auto 2rem auto;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
-        .profile-img-container:hover { transform: scale(1.05); }
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .profile-img-container:hover { transform: scale(1.08); border-color: var(--accent-pink); }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
         .video-container iframe {
             width: 100%;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
         .video-vertical iframe { aspect-ratio: 9/16; max-height: 550px; }
         .video-horizontal iframe { aspect-ratio: 16/9; }
 
         .btn-social {
             transition: all 0.3s ease;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
             color: white;
         }
         .btn-social:hover {
             background: var(--accent-pink);
-            transform: scale(1.1);
+            transform: translateY(-5px);
             color: #1a1212;
         }
 
         .lang-tag {
-            background: rgba(212, 161, 161, 0.1);
-            border: 1px solid var(--accent-pink);
-            padding: 4px 12px;
+            background: rgba(212, 161, 161, 0.08);
+            border: 1px solid rgba(212, 161, 161, 0.3);
+            padding: 5px 15px;
             border-radius: 99px;
             font-size: 0.85rem;
             color: var(--accent-pink);
         }
 
+        /* Full Screen Photo Viewer */
         #lightbox {
             display: none;
             position: fixed;
-            z-index: 100;
+            z-index: 9999;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             justify-content: center;
             align-items: center;
         }
         #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border: 5px solid white;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+            max-width: 85%;
+            max-height: 85%;
+            border: 4px solid var(--accent-pink);
+            border-radius: 12px;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
         }
     </style>
 </head>
@@ -138,10 +141,10 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-black tracking-widest">RAGHAD JABBOUR</h1>
             <div class="space-x-8 hidden md:flex font-bold text-sm">
-                <a href="#about" class="hover:text-pink-300 transition">ABOUT</a>
-                <a href="#experience" class="hover:text-pink-300 transition">CV</a>
-                <a href="#works" class="hover:text-pink-300 transition">MY WORKS</a>
-                <a href="#contact" class="hover:text-pink-300 transition">CONTACT</a>
+                <a href="#about" class="hover:text-pink-300 transition nav-link">ABOUT</a>
+                <a href="#experience" class="hover:text-pink-300 transition nav-link">CV</a>
+                <a href="#works" class="hover:text-pink-300 transition nav-link">MY WORKS</a>
+                <a href="#contact" class="hover:text-pink-300 transition nav-link">CONTACT</a>
             </div>
         </div>
     </nav>
@@ -173,23 +176,23 @@
                 <div class="glass-card p-8" data-aos="fade-left">
                     <h3 class="text-2xl font-bold mb-6 italic text-pink-200">Professional Summary</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Media Producer and Journalist with 5+ years of experience in radio broadcasting and media production. Known for crafting compelling narratives and driving impactful content that resonates with diverse demographics.
+                        Media Producer and Journalist with 5+ years of experience in radio broadcasting and media production. Specialized in crafting compelling narratives and driving impactful content that resonates with diverse demographics across the Middle East.
                     </p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-16 px-6 bg-white/5">
+    <section class="py-16 px-6">
         <div class="max-w-7xl mx-auto">
             <h2 class="section-header text-3xl" data-aos="fade-right">Visual Gallery</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <img src="photo1.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-                <img src="photo2.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
-                <img src="photo3.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
-                <img src="photo4.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
-                <img src="photo5.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
-                <img src="photo6.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/20 aspect-square object-cover hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
+                <img src="photo1.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up">
+                <img src="photo2.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <img src="photo3.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <img src="photo4.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="300">
+                <img src="photo5.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="400">
+                <img src="photo6.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-lg border-2 border-white/5 aspect-square object-cover hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="500">
             </div>
         </div>
     </section>
@@ -202,39 +205,25 @@
                 <div class="glass-card p-8" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold text-pink-200">Journalist Reporter & Radio Producer</h4>
-                        <span class="bg-pink-900/50 text-pink-100 px-4 py-1 rounded-full text-sm font-bold border border-pink-700">2021 — 2025</span>
+                        <span class="bg-pink-900/40 text-pink-100 px-4 py-1 rounded-full text-sm font-bold border border-pink-700">2021 — 2025</span>
                     </div>
                     <p class="text-lg font-bold text-gray-400 mb-4 italic">Radio Sawt Alshabab | General Authority for Radio and Television</p>
                     <ul class="list-disc ml-6 space-y-2 text-gray-300">
                         <li>Develops compelling radio content, boosting listener interaction and community ties.</li>
                         <li>Conducts in-depth interviews and research, producing high-quality content that significantly boosts program ratings.</li>
                         <li>Coordinates with technical teams to enhance broadcast quality and listener satisfaction.</li>
-                        <li>Implements new storytelling techniques, resulting in fresh perspectives for diverse demographics.</li>
-                        <li>Maintains accurate program scripts and schedules, ensuring compliance with regulatory guidelines.</li>
                     </ul>
                 </div>
 
                 <div class="glass-card p-8" data-aos="fade-up">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold text-pink-200">Russian Language Educator</h4>
-                        <span class="bg-pink-900/50 text-pink-100 px-4 py-1 rounded-full text-sm font-bold border border-pink-700">2019 — 2021</span>
+                        <span class="bg-pink-900/40 text-pink-100 px-4 py-1 rounded-full text-sm font-bold border border-pink-700">2019 — 2021</span>
                     </div>
                     <p class="text-lg font-bold text-gray-400 mb-4 italic">Dream Land Kindergarten & Private Instruction</p>
                     <ul class="list-disc ml-6 space-y-2 text-gray-300">
                         <li>Taught Russian pronunciation, grammar, and culture for over 30 students.</li>
                         <li>Facilitated engaging lessons fostering cultural competence and language proficiency.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8" data-aos="fade-up">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
-                        <h4 class="text-2xl font-bold text-pink-200">Marketing & Promotion Specialist</h4>
-                        <span class="bg-pink-900/50 text-pink-100 px-4 py-1 rounded-full text-sm font-bold border border-pink-700">2017 — 2019</span>
-                    </div>
-                    <p class="text-lg font-bold text-gray-400 mb-4 italic">Henkel</p>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-300">
-                        <li>Managed international exhibitions, enhancing brand presence and driving measurable sales growth.</li>
-                        <li>Implemented targeted promotional strategies resulting in noticeable increases in customer engagement.</li>
                     </ul>
                 </div>
             </div>
@@ -260,74 +249,34 @@
                     <div class="flex flex-wrap gap-3">
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Storytelling</span>
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Content Creation</span>
-                        <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Interviewing</span>
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Public Speaking</span>
-                        <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Social Media Strategy</span>
                         <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Broadcast Production</span>
-                        <span class="bg-white/5 px-4 py-2 rounded-lg font-bold border border-white/10">Cultural Insight</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="works" class="py-20 px-6 bg-black/40">
+    <section id="works" class="py-20 px-6 bg-black/30">
         <div class="max-w-7xl mx-auto">
             <h2 class="section-header text-3xl" data-aos="fade-right">Media Portfolio</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
                     <div class="video-container video-vertical mb-6">
                         <iframe src="https://www.youtube.com/embed/ameAjoC9l9Y" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Actor Houssam Al Shah</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A professional radio interview conducted at Al-Hamra Theater regarding the play “The Goat”. The discussion dives deep into artistic performance and theater dynamics in Damascus.</p>
-                    <a href="https://youtube.com/shorts/ameAjoC9l9Y" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube <i class="fab fa-youtube ml-2"></i></a>
+                    <p class="text-gray-400 flex-grow mb-4">Radio interview conducted at Al-Hamra Theater regarding the play “The Goat”. Exploring artistic performance and theater dynamics.</p>
+                    <a href="https://youtube.com/shorts/ameAjoC9l9Y" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube</a>
                 </div>
-
+                
                 <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
                     <div class="video-container video-vertical mb-6">
                         <iframe src="https://www.youtube.com/embed/v_5RohS_wWo" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Director Zain Tayyar</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Exploring the directorial vision behind “The Goat”. This segment focuses on the creative challenges and the implementation of theatrical narratives on the Syrian stage.</p>
-                    <a href="https://youtube.com/shorts/v_5RohS_wWo" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube <i class="fab fa-youtube ml-2"></i></a>
-                </div>
-
-                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
-                    <div class="video-container video-horizontal mb-6">
-                        <iframe src="https://www.youtube.com/embed/vd0w-U3XXSE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-pink-200">Audio Production: "The Goat"</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A comprehensive audio archive and technical recording session for the production of “The Goat”, ensuring high-fidelity sound for broadcast and digital media.</p>
-                    <a href="https://youtu.be/vd0w-U3XXSE" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch Full Video</a>
-                </div>
-
-                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
-                    <div class="video-container video-vertical mb-6">
-                        <iframe src="https://www.youtube.com/embed/AlHNAV07als" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-pink-200">Interview: Actor Majd Mghammas</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Coverage of the play “Al-Bab” at Al-Qabbani Theater. This interview explores the actor's preparation and the socio-cultural themes presented in the performance.</p>
-                    <a href="https://youtube.com/shorts/AlHNAV07als" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube</a>
-                </div>
-
-                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
-                    <div class="video-container video-vertical mb-6">
-                        <iframe src="https://www.youtube.com/embed/5ehGjeuNez0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-pink-200">Profile: Actress Raghad Salim</h4>
-                    <p class="text-gray-400 flex-grow mb-4">A journalistic conversation with actress Raghad Salim regarding her role in “Al-Bab”, focusing on the artistic evolution of Syrian theater actresses.</p>
-                    <a href="https://youtube.com/shorts/5ehGjeuNez0" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube</a>
-                </div>
-
-                <div class="glass-card p-6 flex flex-col" data-aos="fade-up">
-                    <div class="video-container video-horizontal mb-6">
-                        <iframe src="https://www.youtube.com/embed/3AA541Y1vOE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-pink-200">Audio Archive: "Al-Bab"</h4>
-                    <p class="text-gray-400 flex-grow mb-4">Technical audio execution for the “Al-Bab” theater interviews, highlighting precision in field recording and journalistic broadcast standards.</p>
-                    <a href="https://youtu.be/3AA541Y1vOE" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch Full Video</a>
+                    <p class="text-gray-400 flex-grow mb-4">Exploring the directorial vision behind “The Goat”. Focus on creative challenges and narratives.</p>
+                    <a href="https://youtube.com/shorts/v_5RohS_wWo" target="_blank" class="btn-social text-center py-3 rounded-xl font-bold transition">Watch on YouTube</a>
                 </div>
             </div>
         </div>
@@ -336,7 +285,6 @@
     <section id="contact" class="py-24 text-center px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="section-header text-3xl" data-aos="zoom-in">Let's Connect</h2>
-            
             <div class="flex flex-wrap justify-center gap-6 mt-10">
                 <a href="https://wa.me/971504573341" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up">
                     <i class="fab fa-whatsapp text-4xl text-green-400"></i>
@@ -345,10 +293,6 @@
                 <a href="https://www.instagram.com/raghad.jabour" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up" data-aos-delay="100">
                     <i class="fab fa-instagram text-4xl text-pink-400"></i>
                     <span class="font-bold">Instagram</span>
-                </a>
-                <a href="mailto:raghad.jpoor@gmail.com" class="btn-social p-6 rounded-2xl w-40 flex flex-col items-center gap-2 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-envelope text-4xl text-blue-400"></i>
-                    <span class="font-bold">Gmail</span>
                 </a>
             </div>
 
@@ -360,4 +304,20 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center font-bold text-gray-600 border-t border-
+    <footer class="py-12 text-center font-bold text-gray-600 border-t border-white/5">
+        <p>RAGHAD JABBOUR &copy; 2026 | ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false });
+
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            lbImg.src = src;
+            lb.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
