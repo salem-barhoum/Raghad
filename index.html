@@ -41,8 +41,8 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.8);
         }
 
-        .edu-card { transition: all 0.5s ease; }
-        .edu-card:hover { transform: scale(1.03) rotateX(4deg) rotateY(-4deg); border-left: 8px solid var(--accent-pink); }
+        .edu-card { transition: all 0.5s ease; border-left: 0px solid transparent; }
+        .edu-card:hover { transform: scale(1.02); border-left: 8px solid var(--accent-pink); }
 
         .section-header {
             display: inline-block;
@@ -154,12 +154,12 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="section-header text-3xl" data-aos="fade-right">Visual Highlights</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <img src="photo1.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up">
-                <img src="photo2.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="100">
-                <img src="photo3.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="200">
-                <img src="photo4.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="300">
-                <img src="photo5.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="400">
-                <img src="photo6.jpg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="500">
+                <img src="photo1.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up">
+                <img src="photo2.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="100">
+                <img src="photo3.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="200">
+                <img src="photo4.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="300">
+                <img src="photo5.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="400">
+                <img src="photo6.jpeg" onclick="openLightbox(this.src)" class="rounded-2xl shadow-xl aspect-square object-cover hover:scale-105 transition-all duration-500 border-2 border-white/5" data-aos="fade-up" data-aos-delay="500">
             </div>
         </div>
     </section>
@@ -220,7 +220,6 @@
                     <ul class="list-disc ml-10 space-y-4 text-gray-300 text-lg">
                         <li>Taught Russian pronunciation, grammar, and culture for over 30 students.</li>
                         <li>Facilitated engaging lessons fostering cultural competence and language proficiency.</li>
-                        <li>Guided students in mastering complex grammar, leading to improved communication skills.</li>
                     </ul>
                 </div>
                 <div class="glass-card p-10" data-aos="fade-up">
@@ -231,8 +230,7 @@
                     <p class="text-xl font-bold text-gray-400 mb-6 italic">Henkel</p>
                     <ul class="list-disc ml-10 space-y-4 text-gray-300 text-lg">
                         <li>Managed international exhibitions, enhancing brand presence and driving measurable sales growth.</li>
-                        <li>Coordinated marketing campaigns that attracted a diverse and international clientele.</li>
-                        <li>Implemented targeted promotional strategies resulting in noticeables increases in customer engagement.</li>
+                        <li>Coordinated with global marketing teams to align local promotions.</li>
                     </ul>
                 </div>
             </div>
@@ -267,7 +265,7 @@
                         <iframe src="https://www.youtube.com/embed/vd0w-U3XXSE" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Audio Recording: “The Goat”</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Managed and executed professional audio recording for all interviews related to “The Goat”, ensuring optimal sound quality, technical control, and broadcast-ready material.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Managed and executed professional audio recording for all interviews related to “The Goat”, ensuring optimal sound quality, technical control, and broadcast-ready material suitable for professional archiving.</p>
                     <a href="https://youtu.be/vd0w-U3XXSE" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch Full Video</a>
                 </div>
 
@@ -276,7 +274,7 @@
                         <iframe src="https://www.youtube.com/embed/AlHNAV07als" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Actor Majd Mghammas</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">A professional interview with actor Majd Mghammas discussing his role in “Al-Bab” at Al-Qabbani Theater in Damascus, highlighting character depth and dramatic context.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">A professional interview with actor Majd Mghammas discussing his role in “Al-Bab” at Al-Qabbani Theater in Damascus, highlighting character depth and the artistic experience within the play’s dramatic context.</p>
                     <a href="https://youtube.com/shorts/AlHNAV07als" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
 
@@ -285,7 +283,7 @@
                         <iframe src="https://www.youtube.com/embed/5ehGjeuNez0" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Actress Raghad Salim</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">A journalistic conversation with actress Raghad Salim about her experience in “Al-Bab” at Al-Qabbani Theater, focusing on her preparation and the play’s impact on her journey.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">A journalistic conversation with actress Raghad Salim about her experience in “Al-Bab” at Al-Qabbani Theater in Damascus, focusing on her interpretation of the character, preparation process, and the play’s impact on her theatrical journey.</p>
                     <a href="https://youtube.com/shorts/5ehGjeuNez0" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
 
@@ -294,7 +292,7 @@
                         <iframe src="https://www.youtube.com/embed/3AA541Y1vOE" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Audio Archival: “Al-Bab”</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Delivered clear and precise audio recordings for all interviews related to “Al-Bab” at Al-Qabbani Theater, ensuring media-ready archival material.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Delivered clear and precise audio recordings for all interviews related to “Al-Bab” at Al-Qabbani Theater in Damascus, ensuring high sound quality and media-ready archival material.</p>
                     <a href="https://youtu.be/3AA541Y1vOE" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch Full Video</a>
                 </div>
 
@@ -302,8 +300,8 @@
                     <div class="video-container video-vertical mb-6">
                         <iframe src="https://www.youtube.com/embed/63jYU66rf-k" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <h4 class="text-2xl font-bold mb-4 text-pink-200">Art Exhibition: “Hattan”</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Media coverage of the dual art exhibition “Hattan” by visual artists Ali Naffanouf and Adnan Ayoub, highlighting the visual vision and artistic dialogue.</p>
+                    <h4 class="text-2xl font-bold mb-4 text-pink-200">Exhibition: “Hattan”</h4>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Media coverage of the dual art exhibition “Hattan” by visual artists Ali Naffanouf and Adnan Ayoub at the Cultural Center in Damascus, highlighting the visual vision and artistic dialogue.</p>
                     <a href="https://youtube.com/shorts/63jYU66rf-k" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
 
@@ -312,7 +310,7 @@
                         <iframe src="https://www.youtube.com/embed/4PevSXWtwyY" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Director Najdat Anzour</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with director Najdat Anzour at the premiere of “The Broken Cross” at Damascus Opera House, discussing thematic messages and dramatic structure.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Professional interview with director Najdat Anzour during the premiere of “The Broken Cross” at Damascus Opera House, discussing directorial vision and thematic messages.</p>
                     <a href="https://youtube.com/shorts/4PevSXWtwyY" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch Part 1</a>
                 </div>
 
@@ -321,7 +319,7 @@
                         <iframe src="https://www.youtube.com/embed/c7qgvX_tMeE" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Art Director Yazan Anzour</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview focusing on the film’s visual identity and cinematic aesthetics supporting the narrative of “The Broken Cross”.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with art director Yazan Najdat Anzour, focusing on the film’s visual identity and cinematic aesthetics supporting its narrative in “The Broken Cross”.</p>
                     <a href="https://youtube.com/shorts/c7qgvX_tMeE" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch Part 2</a>
                 </div>
 
@@ -330,7 +328,7 @@
                         <iframe src="https://www.youtube.com/embed/DOvmdr0oWM8" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h4 class="text-2xl font-bold mb-4 text-pink-200">Heritage: Nazir Awad</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with the Director-General of Antiquities regarding the Syrian heritage booklet at the National Museum, fostering cultural awareness for younger generations.</p>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with Nazir Awad, Director-General of Antiquities and Museums, regarding the creative children’s booklet introducing Syrian heritage at the National Museum of Damascus.</p>
                     <a href="https://youtube.com/shorts/DOvmdr0oWM8" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
 
@@ -338,8 +336,8 @@
                     <div class="video-container video-vertical mb-6">
                         <iframe src="https://www.youtube.com/embed/o_SDAON1dyg" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <h4 class="text-2xl font-bold mb-4 text-pink-200">Reading Challenge Winner</h4>
-                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with a winner of the Arab Reading Challenge at Damascus Opera House, highlighting the impact of reading on personal development.</p>
+                    <h4 class="text-2xl font-bold mb-4 text-pink-200">Reading Challenge Interview</h4>
+                    <p class="text-gray-400 flex-grow text-lg mb-6">Interview with a winning child of the Arab Reading Challenge at Damascus Opera House, highlighting the impact of reading on personal development.</p>
                     <a href="https://youtube.com/shorts/o_SDAON1dyg" target="_blank" class="btn-social block text-center py-4 rounded-xl font-bold">Watch on YouTube</a>
                 </div>
 
@@ -350,23 +348,33 @@
     <section class="py-20 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
             <div>
-                <h2 class="section-header text-3xl">Education & Courses</h2>
+                <h2 class="section-header text-3xl">Education</h2>
                 <div class="space-y-6">
                     <div class="glass-card edu-card p-8" data-aos="fade-right">
-                        <p class="font-black text-2xl text-pink-200 mb-2">BA of Media</p>
-                        <p class="text-gray-300 text-lg">Damascus Virtual University, Syria (2022-2024)</p>
-                    </div>
-                    <div class="glass-card edu-card p-8" data-aos="fade-right">
+                        <p class="text-pink-400 font-bold mb-1 uppercase tracking-tighter">Oct 2019 — Jul 2020</p>
                         <p class="font-black text-2xl text-pink-200 mb-2">BA of Russian Literature</p>
-                        <p class="text-gray-300 text-lg">Damascus University, Syria (2019-2020)</p>
+                        <p class="text-gray-300 text-lg font-semibold">Damascus University, Syria</p>
                     </div>
                     <div class="glass-card edu-card p-8" data-aos="fade-right">
-                        <p class="font-black text-xl text-pink-200 mb-2">Professional Radio Presentation</p>
-                        <p class="text-gray-400 italic text-lg">Broadcast Training Center - Damascus</p>
+                        <p class="text-pink-400 font-bold mb-1 uppercase tracking-tighter">Oct 2022 — 2024</p>
+                        <p class="font-black text-2xl text-pink-200 mb-2">BA of Media</p>
+                        <p class="text-gray-300 text-lg font-semibold">Damascus Virtual University, Syria</p>
+                    </div>
+                </div>
+
+                <h2 class="section-header text-3xl mt-16">Courses</h2>
+                <div class="space-y-6">
+                    <div class="glass-card edu-card p-8" data-aos="fade-right">
+                        <p class="text-pink-400 font-bold mb-1 uppercase tracking-tighter">Jun 2022 — Jul 2022</p>
+                        <p class="font-black text-xl text-pink-200">Body Language at Alfaisal University</p>
                     </div>
                     <div class="glass-card edu-card p-8" data-aos="fade-right">
-                        <p class="font-black text-xl text-pink-200 mb-2">Advanced Social Media Marketing</p>
-                        <p class="text-gray-400 italic text-lg">International Media Academy</p>
+                        <p class="text-pink-400 font-bold mb-1 uppercase tracking-tighter">May 2022 — Jul 2022</p>
+                        <p class="font-black text-xl text-pink-200">NLP at Alfaisal University</p>
+                    </div>
+                    <div class="glass-card edu-card p-8" data-aos="fade-right">
+                        <p class="text-pink-400 font-bold mb-1 uppercase tracking-tighter">Apr 2020 — May 2020</p>
+                        <p class="font-black text-xl text-pink-200">I speak Russian at Tomsk State University</p>
                     </div>
                 </div>
             </div>
